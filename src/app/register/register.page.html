@@ -1,0 +1,27 @@
+
+<h1> 註冊
+
+</h1>
+<ion-content>
+<div>
+  <ion-label>用戶名稱</ion-label>
+  <br/>
+  <ion-input  [(ngModel)] = Username type=text placeholder=""></ion-input>
+
+
+  <ion-label >電子郵件</ion-label><br/>
+  <ion-input  [(ngModel)] = Email type=email placeholder="example@mail.com"></ion-input>
+
+  <ion-label>設定密碼</ion-label><br/>
+  <ion-input  [(ngModel)] = Password type=password placeholder="請區分大小寫"></ion-input>
+
+
+  <ion-label >確認密碼</ion-label><br/>
+  <ion-input [(ngModel)] = PasswordConfirm type=password placeholder="再次輸入您的密碼"></ion-input>
+
+  <br>
+  <ion-button (click)= "submit()"> 
+    註冊
+  </ion-button>
+</div>
+</ion-content>
