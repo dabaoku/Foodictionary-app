@@ -8,6 +8,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './loginCredential/app.effects'
+import {reducer } from './loginCredential/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +20,11 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({app: reducer}, {}),
+    EffectsModule.forRoot([AppEffects]),
+  
+  
   ],
   providers: [
     StatusBar,

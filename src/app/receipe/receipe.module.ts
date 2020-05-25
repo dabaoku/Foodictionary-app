@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PortalPageRoutingModule } from './portal-routing.module';
+import { ReceipePageRoutingModule } from './receipe-routing.module';
 
-import { PortalPage } from './portal.page';
+import { ReceipePage } from './receipe.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PortalPageRoutingModule
+    ReceipePageRoutingModule
   ],
-  declarations: [PortalPage]
+  declarations: [ReceipePage]
 })
-export class PortalPageModule {}
+export class ReceipePageModule {}

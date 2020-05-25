@@ -9,16 +9,12 @@ const routes: Routes = [
   // },
   {
     path:'',
-    redirectTo:'register',
+    redirectTo:'login',
     pathMatch: 'full'
   },
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
-    path: 'portal',
-    loadChildren: () => import('./portal/portal.module').then( m => m.PortalPageModule)
   },
   {
     path: 'register',
@@ -27,6 +23,34 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
+  },
+  {
+    path: 'manual-input',
+    loadChildren: () => import('./manual-input/manual-input.module').then( m => m.ManualInputPageModule)
+  },
+  {
+    path: 'receipe',
+    loadChildren: () => import('./receipe/receipe.module').then( m => m.ReceipePageModule)
+  },
+  {
+    path: 'foodfilter',
+    loadChildren: () => import('./foodfilter/foodfilter.module').then( m => m.FoodfilterPageModule)
+  },
+  {
+    path: 'receipe-list',
+    loadChildren: () => import('./receipe-list/receipe-list.module').then( m => m.ReceipeListPageModule)
+  },
+  {
+    path: 'video-teaching',
+    loadChildren: () => import('./video-teaching/video-teaching.module').then( m => m.VideoTeachingPageModule)
+  },
+  {
+    path: 'setting',
+    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
   }
 ];
 
