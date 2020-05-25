@@ -1,0 +1,36 @@
+<ion-content>
+
+<div class = "all">
+
+<img class="logo" src="assets/icon/logo.png">
+<br>
+<img class="word" src="assets/icon/logoword.png">
+<br>
+<ion-label><b>剩餘食材交給我們</b></ion-label>
+<div class="loginForm">
+   <ion-item lines=none style="border:none" >
+  <ion-input  [(ngModel)] = Email type=email placeholder="電子郵件"></ion-input>
+</ion-item> 
+<br>
+<ion-item lines=none style="border:none" >
+  <ion-input  [(ngModel)] = Password type=password placeholder="密碼"></ion-input>
+</ion-item>
+
+  
+
+  <br>
+  <ion-button class="submit" (click)= "submit()" shape="round"> 
+    登入
+  </ion-button>
+<br>
+  <ion-label><b>還沒有帳號嗎?</b></ion-label>
+<br>
+  
+
+
+</div>
+<ion-button class="router" (click)= "goRegister()" shape="round"> 
+  註冊
+</ion-button>
+</div>
+</ion-content>
