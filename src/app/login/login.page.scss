@@ -1,7 +1,7 @@
 ion-input{
     border-radius: 10px !important;
  
-    font-size: 0.9em;
+    font-size: 25px;
     border: 1px solid #ffffff !important;
    
     
@@ -9,9 +9,7 @@ ion-input{
     max-width: 90%; 
     height: 60px;
 }
-ion-content{
-    color:	#FF9224;
-}
+
 div{
     background-color: #FF9224;
 //margin-top: 70px;
@@ -23,11 +21,14 @@ h1{
 ion-label{
 position: relative;
 top: 25px;
-padding-top: 15px;
+
 font-size: 25px;
 color:#FFFFFF;
 
 
+}
+ion-content{
+    --background:#FF9224
 }
 .logo{
     padding-top: 30px;
@@ -43,7 +44,7 @@ color:#FFFFFF;
     background-color:#FF9224 ;
 }
 .loginForm{
-    margin-top: 35px;
+    margin-top: 10px;
     text-align: center;
     align-items: center;
     padding-top: 50px;

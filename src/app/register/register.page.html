@@ -1,27 +1,42 @@
+<ion-content>
 
-<h1> 註冊
+  <img class="word" src="assets/icon/logoword.png">
+<h1> <ion-label id="register">註冊</ion-label>
 
 </h1>
-<ion-content>
-<div>
-  <ion-label>用戶名稱</ion-label>
+<div class = "all">
+<div class="registerForm">
+ 
+  <ion-label class="label">用戶名稱</ion-label>
   <br/>
-  <ion-input  [(ngModel)] = Username type=text placeholder=""></ion-input>
-
-
-  <ion-label >電子郵件</ion-label><br/>
-  <ion-input  [(ngModel)] = Email type=email placeholder="example@mail.com"></ion-input>
-
-  <ion-label>設定密碼</ion-label><br/>
-  <ion-input  [(ngModel)] = Password type=password placeholder="請區分大小寫"></ion-input>
-
-
-  <ion-label >確認密碼</ion-label><br/>
-  <ion-input [(ngModel)] = PasswordConfirm type=password placeholder="再次輸入您的密碼"></ion-input>
-
   <br>
-  <ion-button (click)= "submit()"> 
+  <ion-item lines=none style="border:none" >
+  <ion-input  [(ngModel)] = Username type=text placeholder=""></ion-input>
+</ion-item>
+
+
+  <ion-label class="label" >電子郵件</ion-label><br/><br/>
+  <ion-item lines=none style="border:none" >
+  <ion-input  [(ngModel)] = Email type=email placeholder="example@mail.com"></ion-input>
+  </ion-item>
+
+
+  <ion-label  class="label">設定密碼</ion-label><br/><br/>
+  <ion-item lines=none style="border:none" >
+  <ion-input  [(ngModel)] = Password type=password placeholder="請區分大小寫"></ion-input>
+  </ion-item>
+
+  <ion-label  class="label">確認密碼</ion-label><br/><br/>
+  <ion-item lines=none style="border:none" >
+  <ion-input [(ngModel)] = PasswordConfirm type=password placeholder="再次輸入您的密碼"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button class="submit" (click)= "submit()" shape="round"> 
     註冊
   </ion-button>
-</div>
+  <br>
+  <ion-button class="back" (click)= "back()" shape="round"> 
+    返回
+  </ion-button>
+</div></div>
 </ion-content>

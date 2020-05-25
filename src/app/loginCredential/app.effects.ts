@@ -104,17 +104,7 @@ export class AppEffects {
     )
   ));
 
-  // this.actions$.pipe(
-  //   ofType(AppActions.login),
-  //   map((action) => action.credentials),
-  //   tap(() => this.presentLoading()),
-  //   exhaustMap((credentials) =>
-  //     this.userLoginService.request().pipe(
-  //       map((user) => AppActions.loginSuccess({ user })),
-  //       catchError((error) => of(AppActions.loginFailure({ error }))),
-  //     ),
-  //   ),
-  // ),
+ 
 
 
   loginSuccess$ = createEffect(
