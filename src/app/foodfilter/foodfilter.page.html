@@ -1,9 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>foodfilter</ion-title>
+    <ion-title>Food Filter</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="fixed">URL</ion-label>
+    <ion-input [(ngModel)]=url placeholder="Enter your photo url"></ion-input>
+    <ion-button (click)="submit()">Submit
+      <ion-icon slot="end" name="star"></ion-icon>
+    </ion-button>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="fixed">Output</ion-label>
+    <ion-label ngDefaultControl [(ngModel)]="detectOutcome">sj</ion-label>
+
+  </ion-item>
+
+
+    
 </ion-content>
