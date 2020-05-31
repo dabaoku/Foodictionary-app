@@ -16,21 +16,20 @@ export class LoginPage implements OnInit {
   Email: string;
   Password: string;
   constructor(private store: Store<{}>,
-    private router: Router) {}
+              private router: Router) {}
  ngOnInit() {
   }
-submit(){
+submit() {
   const userdata = {
       auth_email: this.Email,
       auth_password: this.Password
-  }
+    }
   this.store.dispatch(AppActions.login({credentials: userdata}))
 
 }
 
-goRegister(){
-
-  this.router.navigateByUrl('register')
+goRegister() {
+ this.router.navigateByUrl('register')
 }
 
 

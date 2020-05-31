@@ -13,10 +13,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
@@ -33,16 +29,16 @@ const routes: Routes = [
     loadChildren: () => import('./manual-input/manual-input.module').then( m => m.ManualInputPageModule)
   },
   {
-    path: 'receipe',
-    loadChildren: () => import('./receipe/receipe.module').then( m => m.ReceipePageModule)
+    path: 'recipe',
+    loadChildren: () => import('./recipe/recipe.module').then( m => m.RecipePageModule)
+  },
+  {
+    path: 'recipe-list',
+    loadChildren: () => import('./recipe-list/recipe-list.module').then( m => m.RecipeListPageModule)
   },
   {
     path: 'foodfilter',
     loadChildren: () => import('./foodfilter/foodfilter.module').then( m => m.FoodfilterPageModule)
-  },
-  {
-    path: 'receipe-list',
-    loadChildren: () => import('./receipe-list/receipe-list.module').then( m => m.ReceipeListPageModule)
   },
   {
     path: 'video-teaching',
@@ -51,7 +47,12 @@ const routes: Routes = [
   {
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },
+  {
+    path: 'all-receipe',
+    loadChildren: () => import('./all-receipe/all-receipe.module').then( m => m.AllReceipePageModule)
   }
+
 ];
 
 @NgModule({
