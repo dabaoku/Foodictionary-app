@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./manual-input/manual-input.module').then( m => m.ManualInputPageModule)
   },
   {
-    path: 'recipe',
+    path: 'recipe/:id',
     loadChildren: () => import('./recipe/recipe.module').then( m => m.RecipePageModule)
   },
   {
@@ -48,10 +48,7 @@ const routes: Routes = [
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
   },
-  {
-    path: 'all-receipe',
-    loadChildren: () => import('./all-receipe/all-receipe.module').then( m => m.AllReceipePageModule)
-  }
+
 
 ];
 

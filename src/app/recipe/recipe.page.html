@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>recipe</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/recipe-list"
+    ></ion-back-button>
+    </ion-buttons>
+    <ion-title><b>食譜</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="recipeImg">
+  <img src="http://140.115.87.146/{{recipe_image}}">
+</div>
+<div class="detail">
+  <div class=border>
+    <ion-label class="name">{{recipe_name}}</ion-label>
+   </div>
+    
+<ion-label class="description">{{recipe_description}}</ion-label><br>
 
+<ion-label >{{recipe_level}}</ion-label><br>
+<ion-label >{{recipe_note}}</ion-label><br>
+<ion-label >{{recipe_total_time}}</ion-label><br>
+<ion-label>{{ recipe_video}}</ion-label><br>
+</div>
 </ion-content>
