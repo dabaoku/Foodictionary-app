@@ -41,7 +41,7 @@ const routes: Routes = [
     loadChildren: () => import('./foodfilter/foodfilter.module').then( m => m.FoodfilterPageModule)
   },
   {
-    path: 'video-teaching',
+    path: 'video-teaching/:id',
     loadChildren: () => import('./video-teaching/video-teaching.module').then( m => m.VideoTeachingPageModule)
   },
   {

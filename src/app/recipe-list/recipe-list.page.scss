@@ -1,7 +1,11 @@
 ion-toolbar{
     --background: #fe9213;
     color: #ffffff;
+    text-align: center;
 
+}
+ion-header{
+    text-align: center;
 }
 ion-item {
     --inner-padding-start: 0.5rem;
@@ -33,7 +37,7 @@ ion-label{
 
 .name{
     font-family: Microsoft JhengHei;
-    font-size: 25px;
+    font-size: 22px;
     color:#4e4b47;
     margin-bottom: 5px;
 
@@ -53,4 +57,8 @@ img{
 }
 ion-back-button{
     --color:white;
+}
+p{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

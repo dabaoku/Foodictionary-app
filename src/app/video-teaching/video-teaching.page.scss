@@ -1,0 +1,42 @@
+ion-toolbar{
+    --background: #fe9213;
+    color: #ffffff;
+    text-align: center;
+    align-items: center;
+}
+ion-title{
+    font-family: Microsoft JhengHei;
+    font-size: 29px;
+}
+ion-back-button{
+    --color:white;
+}
+ion-item{
+    --border-color: #fe9213;
+    --inner-padding-start: 0.5rem;
+    --inner-padding-end: 0.5rem;
+    border-radius:10px;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    font-family: Microsoft JhengHei;
+}
+
+.words{
+    font-family: Microsoft JhengHei;
+}
+
+ion-content{
+    text-align: center;
+    align-items: center;
+}
+.stepContainer{
+    height: auto;
+    width: 80%;
+    margin:0 auto;
+    border:2px #ccc solid;
+    border-radius:10px;
+    border-width: 3px;
+    border-color: #fe9213;
+    margin-top: 60px;
+
+}

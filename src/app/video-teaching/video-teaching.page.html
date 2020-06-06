@@ -1,9 +1,20 @@
 <ion-header>
+  
   <ion-toolbar>
-    <ion-title>videoTeaching</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/recipe-list"
+    ></ion-back-button>
+    </ion-buttons>
+    <ion-title><b>教學</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<div class="stepContainer">
+  <ion-item *ngFor = "let step of steps; last as isLast" [lines]="isLast ? 'none' : 'inset'">
+    
+    <ion-label class="words">{{step.step}}. {{step.step_prescription}}</ion-label>
+  </ion-item>
+</div>
 </ion-content>

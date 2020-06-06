@@ -2,6 +2,7 @@ ion-toolbar{
     --background: #fe9213;
     color: #ffffff;
     text-align: center;
+    align-items: center;
 }
 ion-title{
     font-family: Microsoft JhengHei;
@@ -41,4 +42,20 @@ ion-back-button{
 }
 .description{
     font-size: 20px;
+}
+.submit{
+    --background:#fe9213;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Microsoft JhengHei;
+    border-radius: 90px;
+    height: 50px;
+    width: 240px;
+}
+ion-col{
+    text-align: center;
+    font-family: Microsoft JhengHei;
+    font-size: 25px;
 }

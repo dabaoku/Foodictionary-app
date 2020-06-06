@@ -9,7 +9,7 @@ import {NavController} from '@ionic/angular';
 export class MainPage implements OnInit {
 
   constructor(private router: Router,
-              private navCtrl:NavController) { }
+              private navCtrl: NavController) { }
 
   ngOnInit() {
   }

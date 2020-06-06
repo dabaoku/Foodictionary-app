@@ -1,8 +1,9 @@
 <ion-header>
+  
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-      defaultHref="/recipe-list"
+     
     ></ion-back-button>
     </ion-buttons>
     <ion-title><b>食譜</b></ion-title>
@@ -20,9 +21,31 @@
     
 <ion-label class="description">{{recipe_description}}</ion-label><br>
 
-<ion-label >{{recipe_level}}</ion-label><br>
-<ion-label >{{recipe_note}}</ion-label><br>
-<ion-label >{{recipe_total_time}}</ion-label><br>
-<ion-label>{{ recipe_video}}</ion-label><br>
+<!-- <ion-label >{{recipe_level}}</ion-label><br> -->
+<!-- <ion-label >{{recipe_note}}</ion-label><br> -->
+
+<br>
+<div class="border">
+  <ion-label class="name">食材</ion-label>
+  <div style="float: right ;margin-top: 20px">
+  <ion-label >烹調時間：</ion-label> 
+  <ion-label style="color: chocolate;">{{recipe_total_time}}</ion-label>
+  <ion-label > 分鐘</ion-label> 
 </div>
+  </div>
+  <ion-grid>
+    <ion-row *ngFor ="let ingredient of ingredients;">
+      <ion-col>{{ingredient.ingredient_name}}</ion-col>
+      <ion-col>{{ingredient.ingredient_amount}}</ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>
+<div style="align-items: center; text-align: center;">
+<ion-button shape="round" class="submit" (click)="goToTeaching()">教學</ion-button>
+</div>
+
+
+<!-- <iframe width="80%" height="25%" src="https://www.youtube.com/embed/VmdlfJi7C0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe height="25%" width="80%" [src]="showVideo()" ></iframe> -->
 </ion-content>

@@ -11,7 +11,9 @@
 <ion-content class="ion-padding">
 <ion-searchbar></ion-searchbar>
 <ion-label>全部符合</ion-label>
-<ion-item *ngFor="let recipe of RecipeList; let i = index;" [routerLink]="['/recipe',recipe.id]">
+<ion-item *ngFor="let recipe of RecipeList; let i = index; last as isLast" 
+          [lines]="isLast ? 'none' : 'inset'"
+          [routerLink]="['/recipe',recipe.id]">
 
   <img src="http://140.115.87.146/{{recipe.recipe_image}}">
 

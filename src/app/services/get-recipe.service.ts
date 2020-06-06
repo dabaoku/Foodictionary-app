@@ -6,6 +6,7 @@ import { catchError, map } from 'rxjs/operators';
 interface Response {
  recipe: any;
  step: any;
+ ingredient:any;
 }
 
 @Injectable({
@@ -28,7 +29,8 @@ export class GetRecipeService {
     return this.http.get<Response>(url, httpOptions).pipe(
       map((response) => { return{
         recipe : response.recipe,
-        step : response.step
+        step : response.step,
+        ingredient: response.ingredient
 
 
       }}
