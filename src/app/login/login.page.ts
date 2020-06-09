@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   Email: string;
   Password: string;
   constructor(private store: Store<{}>,
-    private router: Router) {}
+              private router: Router) {}
  ngOnInit() {
   }
 submit(){
