@@ -13,8 +13,14 @@ export class MainPage implements OnInit {
 
   ngOnInit() {
   }
+
   goToRecipe(){
     this.navCtrl.navigateForward('recipe-list')
+    //this.router.navigateByUrl('recipe-list');
+  }
+
+  goToVoice(){
+    this.navCtrl.navigateForward('voice')
     //this.router.navigateByUrl('recipe-list');
   }
 

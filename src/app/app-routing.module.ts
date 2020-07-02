@@ -47,7 +47,11 @@ const routes: Routes = [
   {
     path: 'setting',
     loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+  },  {
+    path: 'voice',
+    loadChildren: () => import('./voice/voice.module').then( m => m.VoicePageModule)
   },
+
 
 
 ];
