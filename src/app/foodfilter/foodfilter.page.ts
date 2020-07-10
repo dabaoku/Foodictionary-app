@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodFillterUrlService } from './food-fillter-url.service';
+import { FoodFilterUrlService } from './food-filter-url.service';
 
 @Component({
   selector: 'app-foodfilter',
@@ -12,14 +12,14 @@ export class FoodfilterPage implements OnInit {
   tagName = [];
 
   constructor(
-    private foodFillterUrlService: FoodFillterUrlService,
+    private foodFilterUrlService: FoodFilterUrlService,
   ) { }
 
   ngOnInit() {
   }
 
   submit() {
-    this.foodFillterUrlService
+    this.foodFilterUrlService
     .request(this.url) 
     .subscribe((data) => {
       this.detectOutcome = data.predictions;
@@ -36,7 +36,7 @@ export class FoodfilterPage implements OnInit {
           // console.log(this.tagName[i]);
         }
       }
-     
+
       console.log(Array.from(new Set(this.tagName)));
 
 

@@ -19,7 +19,7 @@ export interface Response {
 @Injectable({
   providedIn: 'root'
 })
-export class FoodFillterUrlService {
+export class FoodFilterUrlService {
 
   constructor(private http: HttpClient) { }
   request(photoUrl: string) {  
