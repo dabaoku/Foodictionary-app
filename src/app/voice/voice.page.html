@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>voice</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/main"
+    ></ion-back-button>
+    </ion-buttons>
+    <ion-title>語音辨識啦幹</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-button type="button" mat-raised-button color="primary" (click)="startButton($event)"
+        >
+        辨識開始&結束
+      </ion-button>
+      <ion-textarea id="speechdiv" [innerHTML]="innerHtml">
+      </ion-textarea>
 </ion-content>
