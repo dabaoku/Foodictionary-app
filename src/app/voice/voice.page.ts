@@ -11,7 +11,7 @@ export class VoicePage{
   name = 'Speech To Text';
   private recognizing = false;
   private notification: string;
-  private innerHtml: string = '';
+  innerHtml: string = '';
   private lastRecognized: string = '';
   _recognizer: SpeechRecognizer;
   startButton(event) {
@@ -57,6 +57,7 @@ export class VoicePage{
         stopRecognizer.bind(this)
         console.error(err)
       }.bind(this)
+
     )
 
     function stopRecognizer() {
@@ -65,5 +66,4 @@ export class VoicePage{
       console.log('stopped')
     }
   }
-
 }
