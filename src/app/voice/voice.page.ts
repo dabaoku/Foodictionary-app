@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AudioConfig, ResultReason, SpeechConfig, SpeechRecognizer } from 'microsoft-cognitiveservices-speech-sdk';
+import { GetAllIngredientService } from '../services/get-all-ingredient.service';
 
 @Component({
   selector: 'app-voice',
@@ -7,6 +8,9 @@ import { AudioConfig, ResultReason, SpeechConfig, SpeechRecognizer } from 'micro
   styleUrls: ['./voice.page.scss'],
 })
 export class VoicePage{
+
+  constructor(private getAllIngredientService: GetAllIngredientService) {
+  }
 
   name = 'Speech To Text';
   private recognizing = false;
@@ -66,4 +70,12 @@ export class VoicePage{
       console.log('stopped')
     }
   }
+
+  showAllIngredient(){
+    this.getAllIngredientService.request().subscribe( data =>{
+     console.log(data);
+    })
+  }
+
+
 }
