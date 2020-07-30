@@ -22,15 +22,15 @@ export class LoginPage implements OnInit {
  ngOnInit() {
   const user_email = this.cookieService.get('email');
   const user_pwd = this.cookieService.get('password');
-  if (user_email === null){
-    console.log("login")
-  }
-  else{
+  const user_flag = this.cookieService.get('flag');
+  if (user_flag === 'logout') {
+    console.log ( 'login' );
+  } else {
     const cookiedata = {
       auth_email: user_email,
       auth_password: user_pwd
-    }
-    this.store.dispatch(AppActions.login({credentials: cookiedata}))
+    };
+    this.store.dispatch(AppActions.login({credentials: cookiedata}));
   }
   }
 
@@ -38,10 +38,12 @@ submit() {
   const userdata = {
       auth_email: this.Email,
       auth_password: this.Password
-    }
-  this.store.dispatch(AppActions.login({credentials: userdata}))
+    };
+  this.store.dispatch(AppActions.login({credentials: userdata}));
   this.cookieService.set('email', this.Email);
-  this.cookieService.set('password', this.Password)
+  this.cookieService.set('password', this.Password);
+  this.cookieService.set('flag', 'login');
+
 }
 
 goRegister() {
