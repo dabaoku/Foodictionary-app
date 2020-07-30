@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { GetRecipeService } from '../services/get-recipe.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import {NavController} from '@ionic/angular';
+import { NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-recipe',

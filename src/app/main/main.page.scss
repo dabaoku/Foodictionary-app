@@ -6,3 +6,33 @@ ion-toolbar{
 ion-menu-button{
  --color:#ffffff
 }
+ion-label{
+    font-family: Microsoft JhengHei;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+ion-item{
+ 
+    --inner-padding-start: 0.5rem;
+    --inner-padding-end: 0.5rem;
+   
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    font-family: Microsoft JhengHei;
+}
+img{
+    width: 50px;
+    height: 40px;
+    padding-left: 5px;
+}
+.stepContainer{
+    height: 50px;
+    width: 80%;
+    margin:0 auto;
+    border:1px #ccc solid;
+    border-radius:10px;
+    border-width: 2px;
+    margin-top: 10px;;
+
+}

@@ -7,15 +7,14 @@ interface Response {
   message: string;
   data: any;
 }
-
 @Injectable({
   providedIn: 'root'
 })
-export class GetAllRecipeService {
+export class AllRecipeIngredientsService {
 
   constructor(private http: HttpClient) { }
   request(){
-    const url = `http://140.115.87.146/api/allrecipe`;
+    const url = `http://140.115.87.146/api/allrecipeAndIngredient`;
     const httpOptions = {
       headers: new HttpHeaders({
         Accept: 'application/json',
@@ -44,7 +43,4 @@ export class GetAllRecipeService {
     // 最後的回傳值的型別應為 observable
     return throwError('Something bad happened; please try again later.');
   }
-
-
-  }
-
+}

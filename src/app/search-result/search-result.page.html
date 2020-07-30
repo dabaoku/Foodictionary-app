@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/main"
+    ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Foodictionary</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+<ion-label>符合食譜如下</ion-label>
+<ion-item *ngFor="let recipes of RecipeList; let i = index; last as isLast" 
+          [lines]="isLast ? 'none' : 'inset'"
+          [routerLink]="['/recipe',recipes.recipe[0].id]">
+
+  <img src="http://140.115.87.146/{{recipes.recipe[0].recipe_image}}">
+
+<ion-label class="single">
+  <p class="name">
+    <ion-text>{{recipes.recipe[0].recipe_name }}</ion-text>
+  </p>
+
+</ion-label>
+
+</ion-item>
+
+</ion-content>

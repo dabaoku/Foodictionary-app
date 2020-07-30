@@ -27,7 +27,9 @@
     "@ngrx/store": "^9.1.2",
     "core-js": "^2.5.4",
     "microsoft-cognitiveservices-speech-sdk": "^1.12.1",
+    "ngx-cookie-service": "^3.0.4",
     "rxjs": "~6.5.1",
+    "save": "^2.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.10.3"
   },

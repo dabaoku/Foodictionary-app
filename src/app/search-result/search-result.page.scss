@@ -1,0 +1,64 @@
+ion-toolbar{
+    --background: #fe9213;
+    color: #ffffff;
+    text-align: center;
+
+}
+ion-header{
+    text-align: center;
+}
+ion-item {
+    --inner-padding-start: 0.5rem;
+    --inner-padding-end: 0.5rem;
+  
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+  
+  .min-h-8 {
+    --min-height: 2rem;
+  }
+  
+  .min-h-18 {
+    --min-height: 4.5rem;
+  }
+
+ion-searchbar{
+    --icon-color:#fe9213;
+    --placeholder-color:black;	
+    --placeholder-font-style:Microsoft JhengHei;
+    --placeholder-font-weight:bold;
+}
+ion-label{
+    font-size: 18px;
+    font-weight: bold;
+    padding-left:20px;
+}
+
+.name{
+    font-family: Microsoft JhengHei;
+    font-size: 22px;
+    color:#4e4b47;
+    margin-bottom: 5px;
+
+}
+.level{
+    font-size: 15px;
+    font-family: Microsoft JhengHei;
+    color:#4e4b47;
+}
+.single{
+    font-family: Microsoft JhengHei;
+    color:#4e4b47;
+}
+img{
+    width: 80px;
+    height: 60px;
+}
+ion-back-button{
+    --color:white;
+}
+p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

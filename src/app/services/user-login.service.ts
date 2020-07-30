@@ -6,11 +6,11 @@ import { Credentials } from '../models/credentials.model';
 import { User } from '../models/user.model';
 export interface Response {
 
-  message: string,
-  member_id: any,
-  member_name: any,
-  email: any,
-  api_token: any
+  message: string;
+  member_id: any;
+  member_name: any;
+  email: any;
+  api_token: any;
 
 }
 
@@ -35,13 +35,12 @@ export class UserLoginService {
 
       }),
     };
-    console.log(body)
+    console.log(body);
 
     return this.http.post<Response>(url, body, httpOptions).pipe(
       map((response) =>{
         console.log(response);
         return{
-        //message:response.data.message,
         member_id: response.member_id,
         member_name: response.member_name,
         email: response.email,
@@ -64,5 +63,5 @@ export class UserLoginService {
     }
     // 最後的回傳值的型別應為 observable
     return throwError('Something bad happened; please try again later.');
-  };
+  }
 }

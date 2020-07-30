@@ -1,36 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-
-interface Response {
-  message: string;
-  data: any;
-}
 
 @Injectable({
   providedIn: 'root'
 })
-export class GetAllRecipeService {
+export class LogoutService {
 
   constructor(private http: HttpClient) { }
-  request(){
-    const url = `http://140.115.87.146/api/allrecipe`;
+
+
+  /**
+   * 傳送請求
+   */
+  request() {
+    const url = `http://140.115.87.146/api/logout`;
     const httpOptions = {
       headers: new HttpHeaders({
         Accept: 'application/json',
 
       }),
     };
+   
 
-
-    return this.http.get<Response>(url, httpOptions).pipe(
-      map((response) => response.data),
+    return this.http.delete<Response>(url, httpOptions).pipe(
+      map((response) =>{
+     
+        return response;
+       } ),
       catchError(this.handleError),
     );
   }
 
- /**
+  /**
    * 錯誤處理
    */
   private handleError = (error: HttpErrorResponse) => {
@@ -44,7 +47,4 @@ export class GetAllRecipeService {
     // 最後的回傳值的型別應為 observable
     return throwError('Something bad happened; please try again later.');
   }
-
-
-  }
-
+}

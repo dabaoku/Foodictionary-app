@@ -10,26 +10,10 @@
         <ion-item>
           <ion-icon name="mail" slot="start"></ion-icon>
           <ion-label>Inbox</ion-label>
-        </ion-item>
+        </ion-item>      
         <ion-item>
-          <ion-icon name="paper-plane" slot="start"></ion-icon>
-          <ion-label>Outbox</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="heart" slot="start" ></ion-icon>
-          <ion-label>Recipe</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="archive" slot="start"></ion-icon>
-          <ion-label>Archived</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="trash" slot="start"></ion-icon>
-          <ion-label>Trash</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="warning" slot="start"></ion-icon>
-          <ion-label>Spam</ion-label>
+          <ion-icon name="warning" (click)="logout()"></ion-icon>
+          <ion-label>登出</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -45,8 +29,42 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button expand="block" (click) = "goToRecipe()">Recipe</ion-button>
-      <ion-button expand="block" (click) = "goToVoice()">Voice</ion-button>
+
+      <div class="stepContainer">
+   
+        <img src="assets/egg.jpg">
+        <ion-label (click) = "showAll('雞蛋')">雞蛋</ion-label>
+      
+      </div>
+     
+      <div class="stepContainer">
+       
+          <img src="assets/tomato.jpg">
+          <ion-label (click) = "showAll('番茄')">番茄</ion-label>
+        
+        </div>
+        <div class="stepContainer">
+       
+          <img src="assets/high.jpg">
+          <ion-label (click) = "showAll('高麗菜')">高麗菜</ion-label>
+        
+        </div>
+
+        <div class="stepContainer">
+       
+          <img src="assets/chicken.jpg">
+          <ion-label (click) = "showAll('雞肉')">雞肉</ion-label>
+        
+        </div>
+        <div class="stepContainer">
+       
+          <img src="assets/garlic.jpg">
+          <ion-label (click) = "showAll('大蒜')">大蒜</ion-label>
+        
+        </div>
+     
+      <ion-button  (click) = "goToRecipe()">Recipe</ion-button>
+      <ion-button (click) = "goToVoice()">Voice</ion-button>
 
      <img src="assets/icon/keyboard.svg">
     </ion-content>
