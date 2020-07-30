@@ -21,10 +21,15 @@ import {reducer } from './loginCredential/app.reducer';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    StoreModule.forRoot({app: reducer}, {}),
+    StoreModule.forRoot({app: reducer},
+      {
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+        },
+      },
+    ),
     EffectsModule.forRoot([AppEffects]),
-  
-  
   ],
   providers: [
     StatusBar,
