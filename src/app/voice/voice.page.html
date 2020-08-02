@@ -10,8 +10,9 @@
 </ion-header>
 
 <ion-content>
-  <img src="assets/icon/voiceStart.jpg" (click)="start()" [hidden]="this.startRecognize">
-  <img src="assets/icon/voiceStop.jpg" (click)="stop()" [hidden]="!this.startRecognize">
-  <ion-textarea id="speechdiv" [innerHTML]="innerHtml">
-  </ion-textarea>
+  <ion-button (click)="start()" [hidden]="this.startRecognize">開始輸入</ion-button>
+  <ion-button (click)="stop()" [hidden]="!this.startRecognize">停止輸入</ion-button>
+  <!-- 回學校再加上圖片 -->
+  <!-- <img src="assets/icon/voiceStart.jpg" (click)="start()" [hidden]="this.startRecognize">
+  <img src="assets/icon/voiceStop.jpg" (click)="stop()" [hidden]="!this.startRecognize"> -->
 </ion-content>
