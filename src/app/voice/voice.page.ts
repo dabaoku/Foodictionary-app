@@ -14,7 +14,7 @@ import { NavController } from '@ionic/angular';
   templateUrl: './voice.page.html',
   styleUrls: ['./voice.page.scss'],
 })
-export class VoicePage{
+export class VoicePage {
 
   startRecognize: boolean;
   allIngredient;
