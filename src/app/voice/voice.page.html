@@ -5,16 +5,13 @@
       defaultHref="/main"
     ></ion-back-button>
     </ion-buttons>
-    <ion-title>語音辨識啦幹</ion-title>
+    <ion-title>語音輸入食材</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="showAllIngredient()">Ingredient</ion-button>
-  <ion-button type="button" mat-raised-button color="primary" (click)="startButton($event)"
-        >
-        辨識開始&結束
-      </ion-button>
-      <ion-textarea id="speechdiv" [innerHTML]="innerHtml">
-      </ion-textarea>
+  <img src="assets/icon/voiceStart.jpg" (click)="start()" [hidden]="this.startRecognize">
+  <img src="assets/icon/voiceStop.jpg" (click)="stop()" [hidden]="!this.startRecognize">
+  <ion-textarea id="speechdiv" [innerHTML]="innerHtml">
+  </ion-textarea>
 </ion-content>
