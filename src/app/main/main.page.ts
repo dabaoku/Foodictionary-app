@@ -17,8 +17,13 @@ export class MainPage implements OnInit {
               private navCtrl: NavController,
               private cookieService: CookieService,
               private allRecipeIngredients: AllRecipeIngredientsService) { }
+  
+Ingredients: any;
+Happy;
 
   ngOnInit() {
+    const foods = localStorage.getItem('voiceResultName');
+    this.Ingredients = foods.split(','); 
   }
 
   goToRecipe() {
@@ -34,7 +39,7 @@ export class MainPage implements OnInit {
     }
 
 
-
+ 
 
   logout() {
     this.logoutService.request().subscribe((data) => {

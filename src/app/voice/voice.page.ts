@@ -3,6 +3,7 @@ import { AudioConfig, ResultReason, SpeechConfig, SpeechRecognizer } from 'micro
 import { GetAllIngredientService } from '../services/get-all-ingredient.service';
 import { never } from 'rxjs';
 import { NavController } from '@ionic/angular';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 // interface resultArray {
 //   id: number;
@@ -26,7 +27,7 @@ export class VoicePage {
   private lastRecognized: string = '';
   _recognizer: SpeechRecognizer;
 
-  constructor(private getAllIngredientService: GetAllIngredientService, private navCtrl: NavController) {
+  constructor(private getAllIngredientService: GetAllIngredientService, private navCtrl: NavController,private router: Router) {
   }
 
   start() {
@@ -118,10 +119,13 @@ export class VoicePage {
      }
     }
 
-    console.log(voiceResultID);
-    console.log(voiceResultName);
+    console.log('id:',voiceResultID);
+    console.log('name',voiceResultName);
     localStorage.setItem('voiceResultID', voiceResultID.toString());
     localStorage.setItem('voiceResultName', voiceResultName.toString());
-    this.navCtrl.navigateBack('main');
+    this.navCtrl.navigateRoot('main').then(() => {
+      window.location.reload();
+    })
+ 
   }
 }
