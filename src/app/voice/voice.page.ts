@@ -91,8 +91,10 @@ export class VoicePage {
   recognizeAllIngredient() {
     localStorage.removeItem('voiceResult');
     localStorage.removeItem('voiceResultName');
+    localStorage.removeItem('voiceResultPicture');
     let voiceResultID = [null];
     let voiceResultName = [null];
+    let voiceResultPicture = [null];
     let j = 0;
 
     // 與資料庫做比對
@@ -100,21 +102,25 @@ export class VoicePage {
       if (this.lastRecognized.includes(this.allIngredient.response.data[i]?.ingredient_name)) {
         voiceResultID[j] = (this.allIngredient.response.data[i].ingredient_id);
         voiceResultName[j] = (this.allIngredient.response.data[i].ingredient_name);
+        voiceResultPicture[j] = (this.allIngredient.response.data[i].ingredient_picture);
         j++;
        } else if ((this.allIngredient.response.data[i]?.ingredient_alias_1 !== null) &&
         (this.lastRecognized.includes(this.allIngredient.response.data[i]?.ingredient_alias_1))) {
         voiceResultID[j] = (this.allIngredient.response.data[i].ingredient_id);
         voiceResultName[j] = (this.allIngredient.response.data[i].ingredient_name);
+        voiceResultPicture[j] = (this.allIngredient.response.data[i].ingredient_picture);
         j++;
        } else if ((this.allIngredient.response.data[i]?.ingredient_alias_2 !== null) &&
        (this.lastRecognized.includes(this.allIngredient.response.data[i]?.ingredient_alias_2))) {
         voiceResultID[j] = (this.allIngredient.response.data[i].ingredient_id);
         voiceResultName[j] = (this.allIngredient.response.data[i].ingredient_name);
+        voiceResultPicture[j] = (this.allIngredient.response.data[i].ingredient_picture);
         j++;
       } else if ((this.allIngredient.response.data[i]?.ingredient_alias_3 !== null) &&
       (this.lastRecognized.includes(this.allIngredient.response.data[i]?.ingredient_alias_3))) {
         voiceResultID[j] = (this.allIngredient.response.data[i].ingredient_id);
         voiceResultName[j] = (this.allIngredient.response.data[i].ingredient_name);
+        voiceResultPicture[j] = (this.allIngredient.response.data[i].ingredient_picture);
         j++;
      }
     }
@@ -123,6 +129,7 @@ export class VoicePage {
     console.log('name',voiceResultName);
     localStorage.setItem('voiceResultID', voiceResultID.toString());
     localStorage.setItem('voiceResultName', voiceResultName.toString());
+    localStorage.setItem('voiceResultPicture', voiceResultPicture.toString());
     this.navCtrl.navigateRoot('main').then(() => {
       window.location.reload();
     })
