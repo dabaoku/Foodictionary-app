@@ -32,8 +32,8 @@
     <ion-content class="ion-padding">
 
       <div class="stepContainer" *ngFor = "let ingredient of Ingredients ;  ">
-   
-        <img src="assets/egg.jpg">
+        
+        <img src="http://140.115.87.146/ingredient/{{ingredient}}.jpg">
       
         <ion-label (click) = "showAll(ingredient)">{{ingredient}}</ion-label>
       

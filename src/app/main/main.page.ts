@@ -24,6 +24,7 @@ Happy;
   ngOnInit() {
     const foods = localStorage.getItem('voiceResultName');
     this.Ingredients = foods.split(','); 
+    console.log(localStorage.getItem('voiceResultPicture'))
   }
 
   goToRecipe() {
