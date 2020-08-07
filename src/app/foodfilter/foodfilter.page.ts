@@ -10,6 +10,7 @@ export class FoodfilterPage implements OnInit {
   url: string;
   detectOutcome: any;
   tagName = [];
+  newTagName: any;
 
   constructor(
     private foodFilterUrlService: FoodFilterUrlService,
@@ -36,10 +37,12 @@ export class FoodfilterPage implements OnInit {
           // console.log(this.tagName[i]);
         }
       }
+      console.log('push過的tagName', this.tagName);
+      console.log('2', Array.from(new Set(this.tagName)));
+      console.log('push且經過set過的tagName', this.tagName);
 
-      console.log('2',Array.from(new Set(this.tagName)));
-
-
+      this.newTagName = Array.from(new Set(this.tagName));
+      console.log('newTagName' , this.newTagName);
     });
   }
 
