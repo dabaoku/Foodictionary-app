@@ -32,7 +32,7 @@ export class ResultPage implements OnInit {
               name: recipedata.recipe[0].recipe_name,
             }
             this.RecipeList.push(recipedata);
-            console.log(recipedata);
+            console.log(this.RecipeList);
 
            
           });
