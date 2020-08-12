@@ -4,6 +4,9 @@ ion-toolbar{
     text-align: center;
 
 }
+ion-title{
+    font-size: 25px;
+}
 ion-header{
     text-align: center;
 }
@@ -61,4 +64,15 @@ ion-back-button{
 p{
     padding-top: 5px;
     padding-bottom: 5px;
+}
+.words{
+    font-family: Microsoft JhengHei; 
+    font-size: 18px;
+    font-weight: bold;
+}
+.down{
+
+    font-family: Microsoft JhengHei; 
+    font-size: 20px;
+    font-weight: bold;
 }

@@ -11,8 +11,90 @@
 </ion-header>
 
 <ion-content>
-  <ion-label>符合食譜如下</ion-label>
-  <ion-item *ngFor="let recipes of RecipeList; let i = index; last as isLast" 
+  <ion-label class="down">符合食譜如下</ion-label>
+  <br>
+  <ion-item> <ion-label class="words">符合5種以上之食譜</ion-label></ion-item>
+  
+  <ion-item *ngFor="let recipes of RecipeList5; let i = index; last as isLast" 
+            [lines]="isLast ? 'none' : 'inset'"
+            [routerLink]="['/recipe',recipes.recipe[0].id]">
+  
+    <img src="http://140.115.87.146/{{recipes.recipe[0].recipe_image}}">
+  
+  <ion-label class="single">
+    <p class="name">
+      <ion-text>{{recipes.recipe[0].recipe_name }}</ion-text>
+    </p>
+  
+  </ion-label>
+  
+  </ion-item>
+<br>
+  <!-- 4 -->
+  <ion-item>
+  <ion-label>符合4種食材之食譜</ion-label>
+</ion-item>
+  <ion-item *ngFor="let recipes of RecipeList4; let i = index; last as isLast" 
+            [lines]="isLast ? 'none' : 'inset'"
+            [routerLink]="['/recipe',recipes.recipe[0].id]">
+  
+    <img src="http://140.115.87.146/{{recipes.recipe[0].recipe_image}}">
+  
+  <ion-label class="single">
+    <p class="name">
+      <ion-text>{{recipes.recipe[0].recipe_name }}</ion-text>
+    </p>
+  
+  </ion-label>
+  
+  </ion-item>
+<!-- 3 -->
+<br>
+<ion-item>
+<ion-label>符合3種食材之食譜</ion-label>
+</ion-item>
+  <ion-item *ngFor="let recipes of RecipeList3; let i = index; last as isLast" 
+            [lines]="isLast ? 'none' : 'inset'"
+            [routerLink]="['/recipe',recipes.recipe[0].id]">
+  
+    <img src="http://140.115.87.146/{{recipes.recipe[0].recipe_image}}">
+  
+  <ion-label class="single">
+    <p class="name">
+      <ion-text>{{recipes.recipe[0].recipe_name }}</ion-text>
+    </p>
+  
+  </ion-label>
+  
+  </ion-item>
+
+
+  <!-- 2 -->
+  <br>
+  <ion-item>
+  <ion-label>符合2種食材之食譜</ion-label>
+</ion-item>
+  <ion-item *ngFor="let recipes of RecipeList2; let i = index; last as isLast" 
+            [lines]="isLast ? 'none' : 'inset'"
+            [routerLink]="['/recipe',recipes.recipe[0].id]">
+  
+    <img src="http://140.115.87.146/{{recipes.recipe[0].recipe_image}}">
+  
+  <ion-label class="single">
+    <p class="name">
+      <ion-text>{{recipes.recipe[0].recipe_name }}</ion-text>
+    </p>
+  
+  </ion-label>
+  
+  </ion-item>
+
+<!-- 1 -->
+<br>
+<ion-item>
+  <ion-label>符合1種食材之食譜</ion-label>
+</ion-item>
+  <ion-item *ngFor="let recipes of RecipeList1; let i = index; last as isLast" 
             [lines]="isLast ? 'none' : 'inset'"
             [routerLink]="['/recipe',recipes.recipe[0].id]">
   
