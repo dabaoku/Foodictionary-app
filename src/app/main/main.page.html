@@ -39,11 +39,18 @@
       
       </div>
 
+     <div class="functions">
+      <img class="camera" src="assets/icon/camera.png"  (click) = "goToRecipe()">
+      <img class="microphone" src="assets/icon/microphone.png"  (click) = "goToVoice()">
+      <img class ="keyboard" src="assets/icon/keyboard.png"  (click) = "navigateToManual()" >
+     </div>
      
-      <ion-button  (click) = "goToRecipe()">Recipe</ion-button>
-      <ion-button (click) = "goToVoice()">Voice</ion-button>
-
-     <img src="assets/icon/keyboard.svg" class="keyboard">
+     <div class="function_words">
+       <ion-label class="camera_word">拍照辨識</ion-label>
+       <ion-label class="micro_word">語音辨識</ion-label>
+      <ion-label class="manual_word">手動輸入</ion-label>
+     </div>
+    
     </ion-content>
   </div>
 </ion-app>

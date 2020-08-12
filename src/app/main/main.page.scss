@@ -3,6 +3,9 @@ ion-toolbar{
     color: #ffffff;
 
 }
+ion-title{
+    font-size: 25px;
+}
 ion-menu-button{
  --color:#ffffff
 }
@@ -37,6 +40,50 @@ img{
 
 }
 .keyboard{
-    color: #fe9213 ;
+    width: 70px;
+    height: 65px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
 
+}
+.camera{
+    width: 70px;
+    height: 65px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+.microphone{
+    width: 70px;
+    height: 65px;
+    position: absolute;
+    bottom: 10px;
+    left:155px;
+}
+
+.camera_word{
+    width: 70px;
+    font-size: 15px;
+    position: absolute;
+    left: 20px;
+}
+.micro_word{
+    width: 70px;
+    font-size: 15px;
+    position: absolute;
+    left: 145px;
+}
+.manual_word{
+    width: 70px;
+    font-size: 15px;
+    position: absolute;
+    right: 20px;
+}
+
+
+
+.function_words{
+    position: fixed;
+    bottom: 0;
 }

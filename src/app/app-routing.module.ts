@@ -55,7 +55,11 @@ const routes: Routes = [
   {
     path: 'search-result/:ingredient',
     loadChildren: () => import('./search-result/search-result.module').then( m => m.SearchResultPageModule)
+  },  {
+    path: 'result',
+    loadChildren: () => import('./result/result.module').then( m => m.ResultPageModule)
   },
+
 
 
 

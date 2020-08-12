@@ -20,6 +20,7 @@ export class LoginPage implements OnInit {
               private router: Router,
               private cookieService: CookieService) {}
  ngOnInit() {
+  this.cookieService.set('flag', 'login');
   const user_email = this.cookieService.get('email');
   const user_pwd = this.cookieService.get('password');
   const user_flag = this.cookieService.get('flag');

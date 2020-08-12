@@ -1,9 +1,19 @@
 <ion-header>
+  
   <ion-toolbar>
-    <ion-title>manualInput</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/main"
+    ></ion-back-button>
+    </ion-buttons>
+    <ion-title><b>手動輸入</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar [(ngModel)] = "searchItem"></ion-searchbar>
+  <ion-button (click) = "search()">搜尋</ion-button>
 
+ 
 </ion-content>
+

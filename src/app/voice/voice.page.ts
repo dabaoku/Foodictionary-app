@@ -27,7 +27,7 @@ export class VoicePage {
   private lastRecognized: string = '';
   _recognizer: SpeechRecognizer;
 
-  constructor(private getAllIngredientService: GetAllIngredientService, private navCtrl: NavController,private router: Router) {
+  constructor(private getAllIngredientService: GetAllIngredientService, private navCtrl: NavController, private router: Router) {
   }
 
   start() {

@@ -51,4 +51,7 @@ Happy;
       this.router.navigateByUrl('login');
     });
   }
+  navigateToManual(){
+    this.navCtrl.navigateForward('manual-input')
+  }
 }

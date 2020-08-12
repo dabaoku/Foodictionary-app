@@ -11,10 +11,11 @@
 </ion-header>
 
 <ion-content>
+  <iframe width="300" height="200" src="https://www.youtube.com/embed/WUbLFSl0Hkc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <div class="stepContainer">
-  <ion-item *ngFor = "let step of steps; last as isLast" [lines]="isLast ? 'none' : 'inset'">
+  <ion-item *ngFor = "let step of steps; last as isLast" [lines]="isLast ? 'none' : 'inset'" >
     
-    <ion-label class="words">{{step.step}}. {{step.step_prescription}}</ion-label>
+    <ion-label class="words" text-wrap >{{step.step}}. {{step.step_prescription}}</ion-label>
   </ion-item>
 </div>
 </ion-content>
