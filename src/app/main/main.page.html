@@ -45,12 +45,19 @@
       <img class ="keyboard" src="assets/icon/keyboard.png"  (click) = "navigateToManual()" >
      </div>
      
+
      <div class="function_words">
        <ion-label class="camera_word">拍照辨識</ion-label>
        <ion-label class="micro_word">語音辨識</ion-label>
       <ion-label class="manual_word">手動輸入</ion-label>
      </div>
     
+
+      <ion-button  (click) = "goToRecipe()">Recipe</ion-button>
+      <ion-button (click) = "goToVoice()">Voice</ion-button>
+      <ion-button  (click) = "goToFoodFilter()">Food Filter</ion-button>
+
+
     </ion-content>
   </div>
 </ion-app>

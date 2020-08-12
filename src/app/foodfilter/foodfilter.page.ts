@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodFilterUrlService } from './food-filter-url.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-foodfilter',
@@ -10,10 +11,10 @@ export class FoodfilterPage implements OnInit {
   url: string;
   detectOutcome: any;
   tagName = [];
+  newTagName: any;
 
   constructor(
-    private foodFilterUrlService: FoodFilterUrlService,
-  ) { }
+    private foodFilterUrlService: FoodFilterUrlService, private navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -36,10 +37,24 @@ export class FoodfilterPage implements OnInit {
           // console.log(this.tagName[i]);
         }
       }
+      console.log('push過的tagName', this.tagName);
+      console.log('2', Array.from(new Set(this.tagName)));
+      console.log('push且經過set過的tagName', this.tagName);
 
-      console.log('2',Array.from(new Set(this.tagName)));
+      this.newTagName = Array.from(new Set(this.tagName));
+      console.log('newTagName' , this.newTagName);
+      console.log('newTagName toString' , this.newTagName.toString());
 
+    });
+  }
 
+  //還要寫動態刪除辨識錯誤的食材
+
+  SentDetectOutcome() {
+    localStorage.setItem('newTagName', this.newTagName.toString());
+
+    this.navCtrl.navigateRoot('main').then(() => {
+      window.location.reload();
     });
   }
 

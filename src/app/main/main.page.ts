@@ -35,6 +35,10 @@ Happy;
     this.navCtrl.navigateForward('voice');
   }
 
+  goToFoodFilter() {
+    this.navCtrl.navigateForward('foodfilter');
+  }
+
   showAll(ingredient: string) {
       this.navCtrl.navigateForward('search-result/' + ingredient);
     }
