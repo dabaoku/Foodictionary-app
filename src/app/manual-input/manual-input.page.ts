@@ -21,7 +21,9 @@ export class ManualInputPage implements OnInit {
   search() {
     const food = this.searchItem;
     this.Ingredients = food.split(' ');
-    localStorage.setItem('manual-input', this.Ingredients);
-    this.navCtrl.navigateForward('result');
+    localStorage.setItem('voiceResultName', this.Ingredients);
+    this.navCtrl.navigateRoot('main').then(() => {
+      window.location.reload();
+    });    // this.navCtrl.navigateForward('result');
   }
 }

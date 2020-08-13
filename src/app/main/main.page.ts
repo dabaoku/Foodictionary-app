@@ -4,6 +4,7 @@ import { NavController} from '@ionic/angular';
 import { LogoutService } from '../services/logout.service';
 import { AllRecipeIngredientsService } from '../services/all-recipe-ingredients.service';
 import { CookieService } from 'ngx-cookie-service';
+import { VirtualTimeScheduler } from 'rxjs';
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
@@ -24,7 +25,14 @@ Ingredients: any;
     const foods = localStorage.getItem('voiceResultName');
     this.Ingredients = foods.split(','); 
     console.log(localStorage.getItem('voiceResultPicture'));
-    console.log(this.Ingredients)
+
+ 
+    for ( let i = 0 ;  i < this.Ingredients.length ; i++) {
+      if ( this.Ingredients[i] === '') {
+        this.Ingredients.splice( i, 1 );
+      }
+    }
+  
   }
 
   goToRecipe() {
@@ -55,8 +63,9 @@ Ingredients: any;
       this.router.navigateByUrl('login');
     });
   }
-  navigateToManual(){
-    this.navCtrl.navigateForward('manual-input')
+
+  navigateToManual() {
+    this.navCtrl.navigateForward('manual-input');
   }
   goSearch(){
  
