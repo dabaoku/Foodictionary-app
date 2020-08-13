@@ -5,14 +5,24 @@
       defaultHref="/main"
     ></ion-back-button>
     </ion-buttons>
-    <ion-title>語音輸入食材</ion-title>
+    <ion-title><b>語音輸入食材</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="start()" [hidden]="this.startRecognize">開始輸入</ion-button>
-  <ion-button (click)="stop()" [hidden]="!this.startRecognize">停止輸入</ion-button>
-  <!-- 回學校再加上圖片 -->
-  <!-- <img src="assets/icon/voiceStart.jpg" (click)="start()" [hidden]="this.startRecognize">
-  <img src="assets/icon/voiceStop.jpg" (click)="stop()" [hidden]="!this.startRecognize"> -->
+  <!-- <div class="stepContainer center"> -->
+    <!-- <ion-label class="info">小提示</ion-label> -->
+    <div class="detail">
+      <div class=border>
+        <ion-label class="name">小提示</ion-label>
+       </div>
+    <ion-label class="description">
+      <span>1. 請點選下方按鈕開始輸入</span><br>
+      <span>2. 請說出冰箱有的食材</span><br>
+      <span>3. 輸入完成後，等待2秒按下停止按鈕即輸入完成</span><br>
+    </ion-label>
+    </div>
+  <!-- </div> -->
+  <img src="assets/icon/voiceStart.png" (click)="start()" [hidden]="this.startRecognize" class="picSize">
+  <img src="assets/icon/voiceStop.png" (click)="stop()" [hidden]="!this.startRecognize" class="picSize">
 </ion-content>
