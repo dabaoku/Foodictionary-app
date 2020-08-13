@@ -19,12 +19,12 @@ export class MainPage implements OnInit {
               private allRecipeIngredients: AllRecipeIngredientsService) { }
   
 Ingredients: any;
-Happy;
 
   ngOnInit() {
     const foods = localStorage.getItem('voiceResultName');
     this.Ingredients = foods.split(','); 
-    console.log(localStorage.getItem('voiceResultPicture'))
+    console.log(localStorage.getItem('voiceResultPicture'));
+    console.log(this.Ingredients)
   }
 
   goToRecipe() {
@@ -57,5 +57,10 @@ Happy;
   }
   navigateToManual(){
     this.navCtrl.navigateForward('manual-input')
+  }
+  goSearch(){
+ 
+    localStorage.setItem('manual-input', this.Ingredients);
+    this.navCtrl.navigateForward('result');
   }
 }
