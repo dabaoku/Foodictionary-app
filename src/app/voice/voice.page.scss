@@ -34,7 +34,29 @@ ion-header{
 .picSize{
     height: 275px;
     width: 275px;
-    margin-top: 70px;
-    margin-left: 50px;
-    margin-right: 50px;
+   
+}
+
+.fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 0;
+    left: 0;
+   align-items: center;
+   display: inline-block;
+    vertical-align: middle;
+   height: 50%;
+    width: 100%;
+    background-color: white;
+  }
+
+.voice_icon{
+
+    right: 50%;
+    height: 70px;
+    width: 275px;
+    height: 275px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
 }

@@ -23,6 +23,11 @@
     </ion-label>
     </div>
   <!-- </div> -->
-  <img src="assets/icon/voiceStart.png" (click)="start()" [hidden]="this.startRecognize" class="picSize">
-  <img src="assets/icon/voiceStop.png" (click)="stop()" [hidden]="!this.startRecognize" class="picSize">
+  <div class = "fixed">
+    <div class="voice_icon">
+    <img src="assets/icon/voiceStart.png" (click)="start()" [hidden]="this.startRecognize" class="picSize">
+   <img src="assets/icon/voiceStop.png" (click)="stop()" [hidden]="!this.startRecognize" class="picSize">
+  </div>
+</div>
+  
 </ion-content>
