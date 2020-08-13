@@ -45,6 +45,7 @@ img{
     position: absolute;
     bottom: 10px;
     right: 20px;
+    padding: 0;
 
 }
 .camera{
@@ -53,32 +54,38 @@ img{
     position: absolute;
     bottom: 10px;
     left: 20px;
+    padding: 0;
 }
 .microphone{
     width: 70px;
     height: 65px;
     position: absolute;
     bottom: 10px;
-    left:155px;
+    padding: 0;
+
+    //align-items:center;
+//justify-content:center;
 }
 
 .camera_word{
     width: 70px;
-    font-size: 15px;
+    font-size: 17px;
     position: absolute;
-    left: 20px;
+    left: 22px;
 }
 .micro_word{
-    width: 70px;
-    font-size: 15px;
+    width: 72px;
+    font-size: 17px;
     position: absolute;
-    left: 145px;
+left: 2px;
+  
 }
 .manual_word{
     width: 70px;
-    font-size: 15px;
+    font-size: 17px;
     position: absolute;
     right: 20px;
+
 }
 
 
@@ -87,3 +94,37 @@ img{
     position: fixed;
     bottom: 0;
 }
+.center_icon{
+    right: 50%;
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.fixed {
+    position: fixed;
+    bottom: 40px;
+    right: 0;
+    left: 0;
+   align-items: center;
+   display: inline-block;
+    vertical-align: middle;
+   height: 70px;
+    width: 100%;
+    background-color: white;
+  }
+
+  .fixed2{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+   align-items: center;
+   display: inline-block;
+    vertical-align: middle;
+   height: 50px;
+    width: 100%;
+    background-color: white;
+  }
