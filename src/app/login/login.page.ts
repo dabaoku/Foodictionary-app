@@ -20,19 +20,19 @@ export class LoginPage implements OnInit {
               private router: Router,
               private cookieService: CookieService) {}
  ngOnInit() {
-  this.cookieService.set('flag', 'login');
-  const user_email = this.cookieService.get('email');
-  const user_pwd = this.cookieService.get('password');
-  const user_flag = this.cookieService.get('flag');
-  if (user_flag === 'logout') {
-    console.log ( 'login' );
-  } else {
-    const cookiedata = {
-      auth_email: user_email,
-      auth_password: user_pwd
-    };
-    this.store.dispatch(AppActions.login({credentials: cookiedata}));
-  }
+  // this.cookieService.set('flag', 'login');
+  // const user_email = this.cookieService.get('email');
+  // const user_pwd = this.cookieService.get('password');
+  // const user_flag = this.cookieService.get('flag');
+  // if (user_flag === 'logout') {
+  //   console.log ( 'login' );
+  // } else {
+  //   const cookiedata = {
+  //     auth_email: user_email,
+  //     auth_password: user_pwd
+  //   };
+  //   this.store.dispatch(AppActions.login({credentials: cookiedata}));
+  // }
   }
 
 submit() {

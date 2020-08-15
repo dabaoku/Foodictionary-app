@@ -32,7 +32,8 @@ Ingredients: any;
         this.Ingredients.splice( i, 1 );
       }
     }
-  
+   
+    
   }
 
   goToRecipe() {
@@ -75,4 +76,14 @@ Ingredients: any;
     localStorage.setItem('manual-input', this.Ingredients);
     this.navCtrl.navigateForward('result');
   }
+  removePost(post){
+    let index = this.Ingredients.indexOf(post);
+
+    if(index > -1){
+      this.Ingredients.splice(index, 1);
+    }
+
+    localStorage.setItem('voiceResultName', this.Ingredients.toString());
+}
+
 }

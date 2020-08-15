@@ -31,13 +31,14 @@
 
     <ion-content  class="ion-padding">
       <div class ="outer_container" style="overflow-y:auto" >
-      <div  class="stepContainer" *ngFor = "let ingredient of Ingredients ;  ">
-        
+     
+        <ion-item slot=none class="stepContainer" *ngFor = "let ingredient of Ingredients ;  " lines = none>
         <img  src="http://140.115.87.146/ingredient/{{ingredient}}.jpg">
       
-        <ion-label  (click) = "showAll(ingredient)">{{ingredient}}</ion-label>
-      
-      </div></div>
+        <ion-label class="i_text"  (click) = "showAll(ingredient)"> {{ingredient}} </ion-label>
+        <ion-icon class = "remove" name="close-outline" (click) = "removePost(ingredient)"></ion-icon>
+      </ion-item>
+      </div>
 
 <img class="search_icon" src="assets/icon/search.png"  (click) = "goSearch()">
 
