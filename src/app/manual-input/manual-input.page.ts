@@ -16,12 +16,23 @@ export class ManualInputPage implements OnInit {
               private navCtrl: NavController) { }
 
   ngOnInit() {
+   
   }
 
   search() {
     const food = this.searchItem;
     this.Ingredients = food.split(' ');
-    localStorage.setItem('voiceResultName', this.Ingredients);
+
+    const local = localStorage.getItem('voiceResultName');
+    console.log(local);
+    let messages = local.substring(0, local.length  ).split(',');
+    for(let i = 0 ;i < this.Ingredients.length ;i++){
+      messages.push(this.Ingredients[i]);
+    }
+    //messages.push(this.Ingredients);
+    messages = Array.from(new Set(messages));
+    console.log(messages);
+    localStorage.setItem('voiceResultName',messages.toString());
     this.navCtrl.navigateRoot('main').then(() => {
       window.location.reload();
     });    // this.navCtrl.navigateForward('result');

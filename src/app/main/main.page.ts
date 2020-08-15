@@ -67,6 +67,9 @@ Ingredients: any;
   navigateToManual() {
     this.navCtrl.navigateForward('manual-input');
   }
+  goToCamera(){
+    this.navCtrl.navigateForward('foodfilter');
+  }
   goSearch(){
  
     localStorage.setItem('manual-input', this.Ingredients);

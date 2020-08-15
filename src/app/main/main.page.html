@@ -7,9 +7,9 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>
+        <ion-item (click) = "goToRecipe()">
           <ion-icon name="mail" slot="start"></ion-icon>
-          <ion-label>Inbox</ion-label>
+          <ion-label >Inbox</ion-label>
         </ion-item>      
         <ion-item (click)="logout()">
           <ion-icon name="warning" (click)="logout()"></ion-icon>
@@ -29,20 +29,20 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
-
-      <div class="stepContainer" *ngFor = "let ingredient of Ingredients ;  ">
+    <ion-content  class="ion-padding">
+      <div class ="outer_container" style="overflow-y:auto" >
+      <div  class="stepContainer" *ngFor = "let ingredient of Ingredients ;  ">
         
         <img  src="http://140.115.87.146/ingredient/{{ingredient}}.jpg">
       
         <ion-label  (click) = "showAll(ingredient)">{{ingredient}}</ion-label>
       
-      </div>
+      </div></div>
 
 <img class="search_icon" src="assets/icon/search.png"  (click) = "goSearch()">
 
     <div class="fixed">
-      <img class="camera" src="assets/icon/camera.png"  (click) = "goToRecipe()">
+      <img class="camera" src="assets/icon/camera.png" (click) = "goToCamera()" >
       <div class="center_icon">
       <img class="microphone" src="assets/icon/microphone.png"  (click) = "goToVoice()">
       </div>
