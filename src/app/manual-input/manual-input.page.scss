@@ -14,29 +14,29 @@ img{
     width: 75%;
     padding-top: 30px;
 }
-.recipeImg{
-    align-items: center;
-    text-align: center;
-}
-.name{
-    font-family:Microsoft JhengHei;
-    font-size: 38px;
-   margin-top:0 ;
-   
-}
-
- .detail{
+.detail{
     width: 75%;
+    font-size: 20px;
     margin:0 auto;
 }
-
 .border{
     border-bottom: darken($color: #000000b0, $amount: 0);
     border-bottom-style:solid; 
     border-width: 1px;
     padding-bottom: 3px;
+    padding-top: 20px;
     margin-bottom: 12px;
 }
+.name{
+    font-family:Microsoft JhengHei;
+    font-size: 38px;
+    margin-top:0 ;
+}
+.recipeImg{
+    align-items: center;
+    text-align: center;
+}
+
 ion-back-button{
     --color:white;
 }
