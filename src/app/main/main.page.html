@@ -8,11 +8,11 @@
     <ion-content>
       <ion-list>
         <ion-item (click) = "goToRecipe()">
-          <ion-icon name="mail" slot="start"></ion-icon>
-          <ion-label >Inbox</ion-label>
+          <ion-icon name="pizza-outline" style="padding-right:8px;"></ion-icon>
+          <ion-label >View all recipe</ion-label>
         </ion-item>      
         <ion-item (click)="logout()">
-          <ion-icon name="warning" (click)="logout()"></ion-icon>
+          <ion-icon name="power-outline"  (click)="logout()" style="padding-right:8px;"></ion-icon>
           <ion-label >登出</ion-label>
         </ion-item>
       </ion-list>

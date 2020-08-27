@@ -3,7 +3,6 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NavController} from '@ionic/angular';
 import { LogoutService } from '../services/logout.service';
 import { AllRecipeIngredientsService } from '../services/all-recipe-ingredients.service';
-import { CookieService } from 'ngx-cookie-service';
 import { VirtualTimeScheduler } from 'rxjs';
 @Component({
   selector: 'app-main',
@@ -16,7 +15,6 @@ export class MainPage implements OnInit {
               private logoutService: LogoutService,
               private router: Router,
               private navCtrl: NavController,
-              private cookieService: CookieService,
               private allRecipeIngredients: AllRecipeIngredientsService) { }
   
 Ingredients: any;
@@ -56,9 +54,6 @@ Ingredients: any;
   logout() {
     this.logoutService.request().subscribe((data) => {
       alert(data);
-      this.cookieService.delete('email');
-      this.cookieService.delete('password');
-      this.cookieService.set('flag', 'logout');
       this.router.navigateByUrl('login');
     });
   }

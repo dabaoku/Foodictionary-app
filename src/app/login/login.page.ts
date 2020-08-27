@@ -41,10 +41,7 @@ submit() {
       auth_password: this.Password
     };
   this.store.dispatch(AppActions.login({credentials: userdata}));
-  this.cookieService.set('email', this.Email);
-  this.cookieService.set('password', this.Password);
-  this.cookieService.set('flag', 'login');
-
+ 
 }
 
 goRegister() {
