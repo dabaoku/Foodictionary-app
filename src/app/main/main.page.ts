@@ -31,9 +31,7 @@ Ingredients: any;
       if ( this.Ingredients[i] === '') {
         this.Ingredients.splice( i, 1 );
       }
-    }
-   
-    
+    } 
   }
 
   goToRecipe() {

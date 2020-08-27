@@ -33,7 +33,7 @@
       <div class ="outer_container" style="overflow-y:auto" >
      
         <ion-item slot=none class="stepContainer" *ngFor = "let ingredient of Ingredients ;  " lines = none>
-        <img  src="http://140.115.87.146/ingredient/{{ingredient}}.jpg">
+        <img class = "ingma" src="http://140.115.87.146/ingredient/{{ingredient}}.jpg">
       
         <ion-label class="i_text"  (click) = "showAll(ingredient)"> {{ingredient}} </ion-label>
         <ion-icon class = "remove" name="close-outline" (click) = "removePost(ingredient)"></ion-icon>
