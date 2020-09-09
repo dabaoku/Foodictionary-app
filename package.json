@@ -13,19 +13,21 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "~9.1.12",
-    "@angular/core": "~9.1.12",
-    "@angular/forms": "~9.1.12",
-    "@angular/platform-browser": "~9.1.12",
-    "@angular/platform-browser-dynamic": "~9.1.12",
-    "@angular/router": "~9.1.12",
+    "@angular/common": "~10.1.0",
+    "@angular/core": "~10.1.0",
+    "@angular/forms": "~10.1.0",
+    "@angular/platform-browser": "~10.1.0",
+    "@angular/platform-browser-dynamic": "~10.1.0",
+    "@angular/router": "~10.1.0",
     "@ionic-native/core": "^5.0.7",
     "@ionic-native/native-storage": "^5.28.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
+    "@ionic/storage": "^2.3.1",
     "@ngrx/effects": "^9.1.2",
     "@ngrx/store": "^9.1.2",
+    "cordova-android": "9.0.0",
     "core-js": "^2.5.4",
     "microsoft-cognitiveservices-speech-sdk": "^1.12.1",
     "ngx-cookie-service": "^3.0.4",
@@ -35,11 +37,11 @@
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.12",
-    "@angular/cli": "9.1.12",
-    "@angular/compiler": "~9.1.12",
-    "@angular/compiler-cli": "~9.1.12",
-    "@angular/language-service": "~9.1.12",
+    "@angular-devkit/build-angular": "~0.1001.0",
+    "@angular/cli": "10.1.0",
+    "@angular/compiler": "~10.1.0",
+    "@angular/compiler-cli": "~10.1.0",
+    "@angular/language-service": "~10.1.0",
     "@ionic/angular-toolkit": "^2.1.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
@@ -53,6 +55,7 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^5.0.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -63,7 +66,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "^3.7.5"
+    "typescript": "^4.0.2"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -75,7 +78,8 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-sqlite-storage": {}
     },
     "platforms": [
       "android",

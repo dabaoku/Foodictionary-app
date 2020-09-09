@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './loginCredential/app.effects'
+import { AppEffects } from './loginCredential/app.effects';
 import {reducer } from './loginCredential/app.reducer';
 import { CookieService } from 'ngx-cookie-service';
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,6 +21,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     StoreModule.forRoot({app: reducer},
       {

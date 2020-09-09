@@ -5,6 +5,7 @@ import { LogoutService } from '../services/logout.service';
 import { AllRecipeIngredientsService } from '../services/all-recipe-ingredients.service';
 import { VirtualTimeScheduler } from 'rxjs';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
@@ -13,6 +14,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 export class MainPage implements OnInit {
 
   constructor(
+    private storage: Storage,
               private nativeStorage: NativeStorage,
               private logoutService: LogoutService,
               private router: Router,
@@ -22,20 +24,20 @@ export class MainPage implements OnInit {
 Ingredients: any;
 
   ngOnInit() {
-    this.nativeStorage.getItem('voiceResultName').then(
-      data => console.log(data)
-    );
-  
-    const foods = localStorage.getItem('voiceResultName');
-    this.Ingredients = foods.split(','); 
-    console.log(localStorage.getItem('voiceResultPicture'));
-
- 
-    for ( let i = 0 ;  i < this.Ingredients.length ; i++) {
-      if ( this.Ingredients[i] === '') {
-        this.Ingredients.splice( i, 1 );
+    this.storage.get('voiceResultName').then(
+      (data) => {
+        const foods = data.toString();
+        this.Ingredients = foods.split(',');     
+     
+        for ( let i = 0 ;  i < this.Ingredients.length ; i++) {
+          if ( this.Ingredients[i] === '') {
+            this.Ingredients.splice( i, 1 );
+          }
+        } 
       }
-    } 
+    )
+
+   
   }
 
   goToRecipe() {
