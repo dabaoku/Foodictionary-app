@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { GetRecipeService } from '../services/get-recipe.service';
-import { DomSanitizer } from '@angular/platform-browser';
 import {NavController} from '@ionic/angular';
+import {DomSanitizer,SafeResourceUrl} from '@angular/platform-browser';
+
+
 
 @Component({
   selector: 'app-video-teaching',
@@ -11,14 +13,15 @@ import {NavController} from '@ionic/angular';
 })
 export class VideoTeachingPage implements OnInit {
   recipe_id : string;  
-  steps:any; 
-
-
+  steps: any; 
+  VideoUrl;
+  
 
   constructor(private route: ActivatedRoute,
               private getRecipeService: GetRecipeService,
               private dom: DomSanitizer,
-              private navCtrl: NavController) { this.recipe_id = this.route.snapshot.paramMap.get('id');}
+              private navCtrl: NavController,
+              private sanitizer: DomSanitizer) { this.recipe_id = this.route.snapshot.paramMap.get('id');}
 
   ngOnInit() {
     this.showSteps();
@@ -27,10 +30,12 @@ export class VideoTeachingPage implements OnInit {
 showSteps(){
   this.getRecipeService.request(this.recipe_id).subscribe(data =>{
     this.steps = data.step;
-    console.log(this.steps)
-
+    console.log("ss", data.recipe[0].recipe_video)
+    this.VideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(data.recipe[0].recipe_video);
 
   })
+    
+
 }
 
 

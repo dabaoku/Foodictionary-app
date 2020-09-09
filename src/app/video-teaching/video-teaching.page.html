@@ -6,13 +6,17 @@
       defaultHref="/recipe-list"
     ></ion-back-button>
     </ion-buttons>
-    <ion-title><b>教學</b></ion-title>
+    <ion-title><b>Video</b></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <iframe width="300" height="200" src="https://www.youtube.com/embed/WUbLFSl0Hkc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div class="stepContainer">
+  <!-- <iframe width="300" height="200" [src]='VideoUrl'  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+  <!-- <iframe [src]='VideoUrl'></iframe> -->
+  <!-- <video width="300" height="200" [src]="VideoUrl" frameborder="0" allowfullscreen></video> -->
+  <iframe [src]='VideoUrl' width="300" height="200" ></iframe>
+ 
+  <div class="stepContainer">
   <ion-item *ngFor = "let step of steps; last as isLast" [lines]="isLast ? 'none' : 'inset'" >
     
     <ion-label class="words" text-wrap >{{step.step}}. {{step.step_prescription}}</ion-label>

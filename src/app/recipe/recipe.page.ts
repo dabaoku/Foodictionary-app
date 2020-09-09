@@ -20,7 +20,9 @@ export class RecipePage implements OnInit {
   recipe_image: string;
   ingredients:any;
 
-  constructor( private route: ActivatedRoute,
+  constructor( 
+              private router: Router,
+              private route: ActivatedRoute,
                private getRecipeService: GetRecipeService,
                private dom: DomSanitizer,
                private navCtrl: NavController) {this.recipe_id = this.route.snapshot.paramMap.get('id'); }
@@ -58,8 +60,9 @@ showVideo(){
   this.dom.bypassSecurityTrustResourceUrl(this.recipe_video);
   console.log(this.recipe_video)
 }
-goToTeaching(){
-  this.navCtrl.navigateForward('video-teaching/'+ this.recipe_id);
+async goToTeaching(){
+  //await this.navCtrl.navigateForward('video-teaching/'+ this.recipe_id);
+  await this.router.navigateByUrl('video-teaching/'+ this.recipe_id);
 }
 
 }

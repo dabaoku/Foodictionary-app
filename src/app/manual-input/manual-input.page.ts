@@ -3,6 +3,7 @@ import { AllRecipeIngredientsService } from '../services/all-recipe-ingredients.
 import { GetRecipeService } from '../services/get-recipe.service';
 import { NavController } from '@ionic/angular';
 import { GetAllIngredientService } from '../services/get-all-ingredient.service';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 @Component({
   selector: 'app-manual-input',
   templateUrl: './manual-input.page.html',
@@ -13,8 +14,10 @@ export class ManualInputPage implements OnInit {
  tempIngredients: any;
 //  Ingredients: any;
  allIngredient;
+ message = [] ;
 
-  constructor(private allRecipeIngredientsService: AllRecipeIngredientsService,
+  constructor(private nativeStorage: NativeStorage,
+              private allRecipeIngredientsService: AllRecipeIngredientsService,
               private getAllIngredientService: GetAllIngredientService, 
               private getRecipeService: GetRecipeService,
               private navCtrl: NavController) { }
@@ -30,7 +33,6 @@ export class ManualInputPage implements OnInit {
     let Ingredients = [null];
     let j = 0;
     // this.tempIngredients = food.split(' ');
-
     for (let i = 0 ; i <= this.allIngredient.response.data.length ; i++) {
       if (food.includes(this.allIngredient.response.data[i]?.ingredient_name)) {
         Ingredients[j] = (this.allIngredient.response.data[i].ingredient_name);
@@ -38,17 +40,24 @@ export class ManualInputPage implements OnInit {
        }
     }
 
+    // const cookie
+    const local = this.nativeStorage.getItem('voiceResultName').then(
+    data =>{
+      this.message = data.substring(0, data.length  ).split(',');
+    }
 
-    const local = localStorage.getItem('voiceResultName');
+   );
     console.log(local);
-    let messages = local.substring(0, local.length  ).split(',');
+   
+   
+   
     for(let i = 0 ;i < Ingredients.length ;i++){
-      messages.push(Ingredients[i]);
+      this.message.push(Ingredients[i]);
     }
     //messages.push(this.Ingredients);
-    messages = Array.from(new Set(messages));
-    console.log(messages);
-    localStorage.setItem('voiceResultName',messages.toString());
+    this.message = Array.from(new Set(this.message));
+    console.log(this.message);
+    this.nativeStorage.setItem('voiceResultName',this.message.toString());
     this.navCtrl.navigateRoot('main').then(() => {
       window.location.reload();
     });    // this.navCtrl.navigateForward('result');

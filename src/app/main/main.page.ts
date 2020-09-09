@@ -4,6 +4,7 @@ import { NavController} from '@ionic/angular';
 import { LogoutService } from '../services/logout.service';
 import { AllRecipeIngredientsService } from '../services/all-recipe-ingredients.service';
 import { VirtualTimeScheduler } from 'rxjs';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
@@ -12,6 +13,7 @@ import { VirtualTimeScheduler } from 'rxjs';
 export class MainPage implements OnInit {
 
   constructor(
+              private nativeStorage: NativeStorage,
               private logoutService: LogoutService,
               private router: Router,
               private navCtrl: NavController,
@@ -20,6 +22,10 @@ export class MainPage implements OnInit {
 Ingredients: any;
 
   ngOnInit() {
+    this.nativeStorage.getItem('voiceResultName').then(
+      data => console.log(data)
+    );
+  
     const foods = localStorage.getItem('voiceResultName');
     this.Ingredients = foods.split(','); 
     console.log(localStorage.getItem('voiceResultPicture'));
