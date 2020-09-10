@@ -22,6 +22,7 @@ export class FoodfilterPage implements OnInit {
     tagName = [];
     newTagName: any;
     image: SafeResourceUrl;
+    imageElement: any;
 
     constructor(
         private foodFilterUrlService: FoodFilterUrlService,
@@ -76,7 +77,7 @@ export class FoodfilterPage implements OnInit {
 
         // Take a photo
         const capturedPhoto = await Camera.getPhoto({
-            resultType: CameraResultType.Base64,
+            resultType: CameraResultType.Uri,
             source: CameraSource.Camera,
             quality: 100,
             allowEditing: true,
@@ -86,9 +87,12 @@ export class FoodfilterPage implements OnInit {
             capturedPhoto,
             capturedPhoto.base64String
         );
-        this.image = this.domSanitizer.bypassSecurityTrustResourceUrl(
-            capturedPhoto && capturedPhoto.base64String
-        );
-        console.log(this.image);
+        var imageUrl = capturedPhoto.webPath;
+        // this.imageElement.src = imageUrl;
+        // this.image = this.domSanitizer.bypassSecurityTrustResourceUrl(
+        //     capturedPhoto && capturedPhoto.base64String
+        // );
+        console.log(imageUrl);
     }
+    //可參考cocoing or youtube 教學 or DOC
 }
