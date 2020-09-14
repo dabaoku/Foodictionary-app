@@ -14,7 +14,7 @@ export class ManualInputPage implements OnInit {
  tempIngredients: any;
 //  Ingredients: any;
  allIngredient;
- message = [] ;
+
 
   constructor(
               private storage: Storage,
@@ -32,14 +32,23 @@ export class ManualInputPage implements OnInit {
   
   }
 
+
+
+  
+ 
+  
+
   search() {
 
     const food = this.searchItem;
+    console.log("test food",food)
     let Ingredients = [null];
     let j = 0;
     this.storage.get('voiceResultName').then(
     (data)=> {
-      this.message = data;
+      let messages = data.toString().split(',');
+     
+      console.log("A",messages)
       for (let i = 0 ; i <= this.allIngredient.response.data.length ; i++) {
         if (food.includes(this.allIngredient.response.data[i]?.ingredient_name)) {
           Ingredients[j] = (this.allIngredient.response.data[i].ingredient_name);
@@ -47,26 +56,27 @@ export class ManualInputPage implements OnInit {
          }
       }
       for(let i = 0 ; i < Ingredients.length ; i++){
-        this.message.push(Ingredients[i]);
+      
+        messages.push(Ingredients[i]);
       }
-      this.message = Array.from(new Set(this.message));
-      console.log(this.message);
-      this.storage.set('voiceResultName', this.message).then(
+      // this.message = Array.from(new Set(this.message));
+      messages = Array.from(new Set(messages));
+      console.log("B",messages);
+      this.storage.set('voiceResultName', messages).then(
         (setData) =>{
           console.log('Set ok');
+          this.navCtrl.navigateRoot('main').then(() => {
+            window.location.reload();
+          });   
         }
       );
       this.storage.get('voiceResultName').then(
         (getData) =>{
-          console.log('HI',getData);     
+          console.log('HI', getData);     
         }
       )
-     
   
-  
-      this.navCtrl.navigateRoot('main').then(() => {
-        window.location.reload();
-      });   
+    
     } 
 
     )

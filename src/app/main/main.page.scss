@@ -12,14 +12,13 @@ ion-menu-button{
 
 
 ion-item{
- 
     --inner-padding-start: 0.5rem;
     --inner-padding-end: 0.5rem;
-   
     --padding-start: 1rem;
     --padding-end: 1rem;
     font-family: Microsoft JhengHei;
 }
+
 img{
     position: relative;
     width: 30%;
@@ -49,8 +48,8 @@ img{
     bottom: 10px;
     right: 20px;
     padding: 0;
-
 }
+
 .camera{
     width: 70px;
     height: 65px;
@@ -71,10 +70,10 @@ img{
 }
 
 .camera_word{
-    width: 70px;
-    font-size: 17px;
+    width: 50%;
+    font-size: 95%;
     position: absolute;
-    left: 22px;
+    left: 4.5%;
     font-weight: bold;
 }
 .micro_word{
@@ -152,17 +151,18 @@ img{
   }
 
   .i_text{
-  
+    margin-top: 0;
+    margin-bottom: 20px;
     font-family: Microsoft JhengHei;
-    font-size: 35px;
+    font-size: 100%;
     font-weight: bold;
     padding: 0;
   }
 
   .ingma{
 
-    width: 60px;
-    height: 50px;
+    width: 25%;
+    height: 65%;
     margin-bottom: 9px;
 
   }

@@ -6,6 +6,7 @@ import { AllRecipeIngredientsService } from '../services/all-recipe-ingredients.
 import { VirtualTimeScheduler } from 'rxjs';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Storage } from '@ionic/storage';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-main',
   templateUrl: './main.page.html',
@@ -14,7 +15,7 @@ import { Storage } from '@ionic/storage';
 export class MainPage implements OnInit {
 
   constructor(
-    private storage: Storage,
+              private storage: Storage,
               private nativeStorage: NativeStorage,
               private logoutService: LogoutService,
               private router: Router,
@@ -83,8 +84,8 @@ Ingredients: any;
     if(index > -1){
       this.Ingredients.splice(index, 1);
     }
-
-    localStorage.setItem('voiceResultName', this.Ingredients.toString());
+    this.storage.set('voiceResultName', this.Ingredients.toString());
+    // localStorage.setItem('voiceResultName', this.Ingredients.toString());
 }
 
 }
