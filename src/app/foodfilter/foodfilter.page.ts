@@ -43,7 +43,7 @@ export class FoodfilterPage implements OnInit {
                 i < length;
                 i++
             ) {
-                if (this.detectOutcome[i].probability >= 0.7) {
+                if (this.detectOutcome[i].probability >= 0.7) { //信心值大於0.7才接受
                     console.log("1", this.detectOutcome[i].tagName);
                     // this.tagName = this.detectOutcome[i].tagName;
                     this.tagName.push(this.detectOutcome[i].tagName);
@@ -58,13 +58,25 @@ export class FoodfilterPage implements OnInit {
             this.newTagName = Array.from(new Set(this.tagName));
             console.log("newTagName", this.newTagName);
             console.log("newTagName toString", this.newTagName.toString());
+
+            this.SentDetectOutcome();
+
         });
     }
 
     //還要寫動態刪除辨識錯誤的食材
 
     SentDetectOutcome() {
-        localStorage.setItem("newTagName", this.newTagName.toString());
+        const local = localStorage.getItem('voiceResultName');
+        let messages = local.substring(0, local.length  ).split(',');
+        console.log('type of message:', typeof(messages), messages);
+        for(let i = 0 ;i < this.newTagName.length ;i++){
+        messages.push(this.newTagName[i]);
+        }
+        messages = Array.from(new Set(messages));
+        console.log(messages);
+
+        localStorage.setItem('voiceResultName',messages.toString());
 
         this.navCtrl.navigateRoot("main").then(() => {
             window.location.reload();
